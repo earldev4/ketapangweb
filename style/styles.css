@@ -1,0 +1,64 @@
+.navbar .bg-primary{
+    background-color: rgb(26,132,184) !important;
+}
+.nav-link{
+    position: relative;
+}
+.nav-link::after {
+    content: '';
+    transition: all 0.3s ease-in-out;
+    transform: scaleX(0);
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+.button-position{
+    position: absolute;
+    bottom: 1%;
+    right: 5%;
+    z-index: 1000;
+}
+.button-berita{
+    z-index: 1000;
+}
+.navbar .container-fluid .navbar-brand img{
+    width: 50px;
+}
+.text-justify{
+    text-align: justify;
+}
+.active{
+    position: relative;
+}
+.active::after {
+    content: '';
+    transform: scaleX(1);
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+@media only screen and (max-width: 992px) {
+    .indexnavigation{
+        background-color: rgb(26,132,184);
+    }
+}
+@media only screen and (max-width: 380px) {
+    .navbar .fs-6{
+        font-size: 12px !important;
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+    } 
+    .navbar .container-fluid .navbar-brand img{
+        width: 30px;
+    }
+}
