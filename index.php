@@ -8,6 +8,7 @@
         public function handleLogin($data){
             $username = $data['username'] ?? '';
             $password = $data['password'] ?? '';
+            setcookie('username', $username, time() + 60*60*24,'/');
 
             if ($username && $password){
                 $stmt = $this->conn->prepare('SELECT username, password FROM akun WHERE username = ? AND password = ?');
@@ -37,7 +38,6 @@
         public function handleLogout() {
             session_unset();
             session_destroy();
-    
             return [
                 "status" => "success",
                 "message" => "Logout Berhasil",
@@ -133,6 +133,9 @@
                <div class="d-sm-block d-none mx-2">
                     <h5 class="fw-bold">DESA KETAPANG</h5>
                     <h6 class="fw-bold">KABUPATEN TANGGAMUS</h6>
+                    <?php if(isset($_COOKIE['username'])){ ?>
+                    <h6 class="fw-bold">Halo, <?php echo $_COOKIE['username']; ?></h6>
+                    <?php }?>
                </div>
                <div class="d-sm-none d-block mx-2 ">
                     <p class="fs-6 fw-bold" >DESA KETAPANG<br>KABUPATEN TANGGAMUS</p>
