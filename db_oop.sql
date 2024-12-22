@@ -28,7 +28,7 @@ CREATE TABLE `akun` (
   `password` varchar(45) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -50,13 +50,13 @@ DROP TABLE IF EXISTS `berita`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `berita` (
   `id_berita` int NOT NULL AUTO_INCREMENT,
-  `judul` varchar(200) DEFAULT NULL,
-  `gambar` varchar(100) DEFAULT NULL,
-  `penulis` varchar(100) DEFAULT NULL,
-  `deskripsi` longtext,
+  `judul` varchar(200)  DEFAULT NULL,
+  `gambar` varchar(100)  DEFAULT NULL,
+  `penulis` varchar(100)  DEFAULT NULL,
+  `deskripsi` longtext ,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_berita`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -78,16 +78,16 @@ DROP TABLE IF EXISTS `pengaduan`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `pengaduan` (
   `id_pengaduan` int NOT NULL AUTO_INCREMENT,
-  `nama` varchar(100) NOT NULL,
+  `nama` varchar(100)  NOT NULL,
   `umur` int NOT NULL,
-  `kelamin` enum('Laki-laki','Perempuan') NOT NULL,
+  `kelamin` enum('Laki-laki','Perempuan')  NOT NULL,
   `alamat` longtext NOT NULL,
   `ip_perangkat` varchar(45) NOT NULL,
   `browser` longtext NOT NULL,
   `deskripsi` longtext NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_pengaduan`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -115,7 +115,7 @@ CREATE TABLE `umkm` (
   `kategori` enum('Kuliner','Produk','Pariwisata') NOT NULL,
   `deskripsi` longtext NOT NULL,
   PRIMARY KEY (`id_umkm`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -124,7 +124,7 @@ CREATE TABLE `umkm` (
 
 LOCK TABLES `umkm` WRITE;
 /*!40000 ALTER TABLE `umkm` DISABLE KEYS */;
-INSERT INTO `umkm` VALUES (2,'Cahaya Roti Enak Bergizi','67602848880851.14414297.jpg','Jl. Ganjaran, Pinang Jaya, Kec. Kemiling, Kota Bandar Lampung, Lampung','Kuliner','Toko Cahaya Roti – Pilihan Tepat untuk Roti Segar dan Lezat Setiap Hari! Kami menghadirkan berbagai jenis roti, dari manis hingga gurih, yang dibuat dengan bahan berkualitas terbaik. Nikmati aroma roti hangat yang baru keluar dari oven, sempurna untuk menemani waktu santai Anda. Dukung produk lokal dengan membeli roti yang tidak hanya enak, tapi juga ramah di kantong. Kunjungi Toko Cahaya Roti sekarang, karena setiap gigitan membawa kebahagiaan!'),(3,'Rina Busana','6760290f38a970.76258092.jpg','Jl. Fatah, Pinang Jaya, Kec. Kemiling, Kota Bandar Lampung, Lampung','Produk','Toko Rina Busana – Tempatnya Fashion Kekinian untuk Tampil Memukau!. Kami menyediakan koleksi pakaian lengkap untuk segala acara, mulai dari santai hingga formal. Dengan desain modern dan bahan berkualitas, Anda akan selalu tampil percaya diri. Harga bersahabat dan pilihan model yang selalu up-to-date membuat belanja semakin menyenangkan. Kunjungi Toko Rina Busana sekarang dan temukan gaya terbaik yang cocok untuk Anda!'),(4,'Bakso Malang Mas Jooko','676029b5706a14.90173410.jpg','Pinang Jaya, Kec. Kemiling, Kota Bandar Lampung, Lampung ','Kuliner','Toko Bakso Malang Mas Jooko – Nikmati Sensasi Bakso Malang Asli yang Menggoyang Lidah!. Hadir dengan kuah gurih, bakso kenyal, dan pelengkap yang lengkap, setiap mangkuk adalah kelezatan yang tak terlupakan. Dibuat dari bahan-bahan pilihan, kami menjaga kualitas dan cita rasa khas Malang yang autentik. Cocok dinikmati kapan saja, baik bersama keluarga maupun teman. Kunjungi Toko Bakso Malang Mas Jooko sekarang, dan rasakan kehangatan cita rasa Nusantara di setiap suapan!'),(5,'Rumah Makan Cahaya Wibowo','67602a678e4680.74472028.jpg','Jl. Imam Bonjol No.KM.11, Sumber Rejo, Kec. Kemiling, Kota Bandar Lampung, Lampung','Kuliner','Rumah Makan Masakan Padang Cahaya Rizki – Surga Kuliner Khas Minang di Setiap Suapan! Kami menyajikan berbagai hidangan Padang autentik, mulai dari rendang yang lembut hingga sambal ijo yang pedas menggoda. Dibuat dari bumbu-bumbu pilihan, setiap masakan kami dijamin kaya rasa dan memanjakan lidah. Cocok untuk makan bersama keluarga, teman, atau acara spesial Anda. Kunjungi Rumah Makan Masakan Padang Cahaya Rizki sekarang, karena kelezatan sejati selalu dimulai dari sini!'),(6,'Athar Aquarium','67602c795e4bc1.65760627.jpg','Jl. Imam Bonjol Perum BKP No.9C, Sumber Rejo, Kec. Kemiling, Kota Bandar Lampung, Lampung ','Produk','Athar Aquarium – Tempat Terbaik untuk Mempercantik Ruang dengan Keindahan Akuarium! ?✨\r\nKami menyediakan berbagai jenis ikan hias, tanaman air, dan perlengkapan akuarium lengkap untuk kebutuhan Anda. Dengan koleksi yang berkualitas dan harga terjangkau, kami siap membantu Anda menciptakan suasana segar di rumah atau kantor. Tim kami juga siap memberikan konsultasi dan tips perawatan agar akuarium Anda selalu terlihat menawan. Kunjungi Athar Aquarium sekarang, dan jadikan keindahan bawah air bagian dari kehidupan Anda!'),(7,'Toko Anugerah JW','67602d791f61d2.66853377.jpg','Sumber Rejo, Kec. Kemiling, Kota Bandar Lampung, Lampung','Produk','Toko Buku Anugerah JW – Temukan Dunia Baru di Setiap Halaman! Kami menyediakan berbagai koleksi buku, mulai dari novel, buku pelajaran, hingga bacaan inspiratif untuk segala usia. Dengan harga terjangkau dan kualitas terbaik, membaca jadi lebih menyenangkan dan mudah diakses. Toko kami juga menawarkan alat tulis dan perlengkapan sekolah untuk melengkapi kebutuhan Anda. Kunjungi Toko Buku Anugerah JW sekarang, karena setiap buku adalah jendela menuju ilmu dan imajinasi tanpa batas!'),(8,'Lengkung Langit Satu','67602e1d1661e0.04099681.jpg','Pinang Jaya, Kec. Kemiling, Kota Bandar Lampung, Lampung 35153','Pariwisata','Lengkung Langit Satu – Destinasi Wisata Outbound Seru di Tengah Keindahan Alam! Nikmati pengalaman tak terlupakan dengan berbagai aktivitas outbound yang menyenangkan dan menantang, cocok untuk keluarga, teman, atau tim kerja. Dikelilingi panorama alam yang asri, udara segar, dan suasana yang tenang, tempat ini sempurna untuk melepas penat. Fasilitas lengkap dan area yang luas menjamin kenyamanan serta keamanan setiap pengunjung. Kunjungi Lengkung Langit Satu sekarang, dan rasakan petualangan seru di alam terbuka yang mempersatukan kebersamaan!'),(9,'Lembah Hijau','67602eda5675b1.75753702.jpg','Jl. Raden Imba Kusuma Ratu No.21, Sukadana Ham, Kec. Tj. Karang Bar., Kota Bandar Lampung, Lampung','Pariwisata','Lembah Hijau – Tempat Wisata Seru untuk Keluarga, Semua Ada di Sini! ??\r\nNikmati pengalaman tak terlupakan di kebun binatang kami, dengan berbagai satwa menarik yang siap menemani petualangan Anda. Setelah puas menjelajah, segarkan diri di waterboom dengan berbagai wahana air seru untuk anak-anak dan dewasa. Suasana asri dan fasilitas lengkap menjadikan Lembah Hijau destinasi sempurna untuk liburan keluarga. Kunjungi kami sekarang, dan rasakan keceriaan tak terbatas di satu tempat yang menawarkan keindahan alam dan keseruan bermain!'),(10,'Pantai Mutun','67602f6e833ba0.71171748.jpg','Lampung','Pariwisata','Pantai Mutun – Surga Tropis yang Menyegarkan Jiwa! ?☀️\r\nNikmati keindahan pasir putih yang lembut, air laut yang jernih, dan pemandangan matahari terbenam yang memukau. Pantai ini cocok untuk berenang, bermain kano, atau sekadar bersantai menikmati semilir angin laut. Dengan fasilitas lengkap dan suasana yang nyaman, Pantai Mutun adalah tempat ideal untuk liburan keluarga atau berkumpul bersama teman. Datanglah ke Pantai Mutun sekarang, dan rasakan pesona pantai tropis yang akan membuat Anda ingin kembali lagi! ');
+INSERT INTO `umkm` VALUES (2,'Cahaya Roti Enak Bergizi','67602848880851.14414297.jpg','Jl. Ganjaran, Pinang Jaya, Kec. Kemiling, Kota Bandar Lampung, Lampung','Kuliner','Toko Cahaya Roti – Pilihan Tepat untuk Roti Segar dan Lezat Setiap Hari! Kami menghadirkan berbagai jenis roti, dari manis hingga gurih, yang dibuat dengan bahan berkualitas terbaik. Nikmati aroma roti hangat yang baru keluar dari oven, sempurna untuk menemani waktu santai Anda. Dukung produk lokal dengan membeli roti yang tidak hanya enak, tapi juga ramah di kantong. Kunjungi Toko Cahaya Roti sekarang, karena setiap gigitan membawa kebahagiaan!'),(3,'Rina Busana','6760290f38a970.76258092.jpg','Jl. Fatah, Pinang Jaya, Kec. Kemiling, Kota Bandar Lampung, Lampung','Produk','Toko Rina Busana – Tempatnya Fashion Kekinian untuk Tampil Memukau!. Kami menyediakan koleksi pakaian lengkap untuk segala acara, mulai dari santai hingga formal. Dengan desain modern dan bahan berkualitas, Anda akan selalu tampil percaya diri. Harga bersahabat dan pilihan model yang selalu up-to-date membuat belanja semakin menyenangkan. Kunjungi Toko Rina Busana sekarang dan temukan gaya terbaik yang cocok untuk Anda!'),(4,'Bakso Malang Mas Jooko','676029b5706a14.90173410.jpg','Pinang Jaya, Kec. Kemiling, Kota Bandar Lampung, Lampung ','Kuliner','Toko Bakso Malang Mas Jooko – Nikmati Sensasi Bakso Malang Asli yang Menggoyang Lidah!. Hadir dengan kuah gurih, bakso kenyal, dan pelengkap yang lengkap, setiap mangkuk adalah kelezatan yang tak terlupakan. Dibuat dari bahan-bahan pilihan, kami menjaga kualitas dan cita rasa khas Malang yang autentik. Cocok dinikmati kapan saja, baik bersama keluarga maupun teman. Kunjungi Toko Bakso Malang Mas Jooko sekarang, dan rasakan kehangatan cita rasa Nusantara di setiap suapan!'),(5,'Rumah Makan Cahaya Wibowo','67602a678e4680.74472028.jpg','Jl. Imam Bonjol No.KM.11, Sumber Rejo, Kec. Kemiling, Kota Bandar Lampung, Lampung','Kuliner','Rumah Makan Masakan Padang Cahaya Rizki – Surga Kuliner Khas Minang di Setiap Suapan! Kami menyajikan berbagai hidangan Padang autentik, mulai dari rendang yang lembut hingga sambal ijo yang pedas menggoda. Dibuat dari bumbu-bumbu pilihan, setiap masakan kami dijamin kaya rasa dan memanjakan lidah. Cocok untuk makan bersama keluarga, teman, atau acara spesial Anda. Kunjungi Rumah Makan Masakan Padang Cahaya Rizki sekarang, karena kelezatan sejati selalu dimulai dari sini!'),(6,'Athar Aquarium','67602c795e4bc1.65760627.jpg','Jl. Imam Bonjol Perum BKP No.9C, Sumber Rejo, Kec. Kemiling, Kota Bandar Lampung, Lampung ','Produk','Athar Aquarium – Tempat Terbaik untuk Mempercantik Ruang dengan Keindahan Akuarium! ?✨\r\nKami menyediakan berbagai jenis ikan hias, tanaman air, dan perlengkapan akuarium lengkap untuk kebutuhan Anda. Dengan koleksi yang berkualitas dan harga terjangkau, kami siap membantu Anda menciptakan suasana segar di rumah atau kantor. Tim kami juga siap memberikan konsultasi dan tips perawatan agar akuarium Anda selalu terlihat menawan. Kunjungi Athar Aquarium sekarang, dan jadikan keindahan bawah air bagian dari kehidupan Anda!'),(7,'Toko Anugerah JW','67602d791f61d2.66853377.jpg','Sumber Rejo, Kec. Kemiling, Kota Bandar Lampung, Lampung','Produk','Toko Buku Anugerah JW – Temukan Dunia Baru di Setiap Halaman! Kami menyediakan berbagai koleksi buku, mulai dari novel, buku pelajaran, hingga bacaan inspiratif untuk segala usia. Dengan harga terjangkau dan kualitas terbaik, membaca jadi lebih menyenangkan dan mudah diakses. Toko kami juga menawarkan alat tulis dan perlengkapan sekolah untuk melengkapi kebutuhan Anda. Kunjungi Toko Buku Anugerah JW sekarang, karena setiap buku adalah jendela menuju ilmu dan imajinasi tanpa batas!'),(8,'Lengkung Langit Satu Satu Aku Sayang Ibu','67602e1d1661e0.04099681.jpg','Pinang Jaya, Kec. Kemiling, Kota Bandar Lampung, Lampung 35153','Pariwisata','Lengkung Langit Satu – Destinasi Wisata Outbound Seru di Tengah Keindahan Alam! Nikmati pengalaman tak terlupakan dengan berbagai aktivitas outbound yang menyenangkan dan menantang, cocok untuk keluarga, teman, atau tim kerja. Dikelilingi panorama alam yang asri, udara segar, dan suasana yang tenang, tempat ini sempurna untuk melepas penat. Fasilitas lengkap dan area yang luas menjamin kenyamanan serta keamanan setiap pengunjung. Kunjungi Lengkung Langit Satu sekarang, dan rasakan petualangan seru di alam terbuka yang mempersatukan kebersamaan!'),(9,'Lembah Hijau','67602eda5675b1.75753702.jpg','Jl. Raden Imba Kusuma Ratu No.21, Sukadana Ham, Kec. Tj. Karang Bar., Kota Bandar Lampung, Lampung','Pariwisata','Lembah Hijau – Tempat Wisata Seru untuk Keluarga, Semua Ada di Sini! ??\r\nNikmati pengalaman tak terlupakan di kebun binatang kami, dengan berbagai satwa menarik yang siap menemani petualangan Anda. Setelah puas menjelajah, segarkan diri di waterboom dengan berbagai wahana air seru untuk anak-anak dan dewasa. Suasana asri dan fasilitas lengkap menjadikan Lembah Hijau destinasi sempurna untuk liburan keluarga. Kunjungi kami sekarang, dan rasakan keceriaan tak terbatas di satu tempat yang menawarkan keindahan alam dan keseruan bermain!'),(10,'Pantai Mutun','67602f6e833ba0.71171748.jpg','Lampung','Pariwisata','Pantai Mutun – Surga Tropis yang Menyegarkan Jiwa! ?☀️\r\nNikmati keindahan pasir putih yang lembut, air laut yang jernih, dan pemandangan matahari terbenam yang memukau. Pantai ini cocok untuk berenang, bermain kano, atau sekadar bersantai menikmati semilir angin laut. Dengan fasilitas lengkap dan suasana yang nyaman, Pantai Mutun adalah tempat ideal untuk liburan keluarga atau berkumpul bersama teman. Datanglah ke Pantai Mutun sekarang, dan rasakan pesona pantai tropis yang akan membuat Anda ingin kembali lagi! ');
 /*!40000 ALTER TABLE `umkm` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -137,4 +137,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-21 22:13:11
+-- Dump completed on 2024-12-22 20:52:29
